@@ -1,0 +1,395 @@
+<style>
+    
+  body, ul {
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    .Hamburger {
+      background-color: #333; 
+      color: whitesmoke; 
+      padding: 10px;
+    }
+    
+    
+    .ul {
+      list-style-type: none; 
+      display: flex;
+      justify-content: center; 
+    }
+    
+    .ul li {
+      margin: 0 15px; 
+    }
+    
+    .ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .ul li a:hover {
+      text-decoration: underline; 
+    }
+    .colour-1{
+      background-color: darkmagenta;
+      width: auto;
+      height: 350px;
+      padding-left: 250px;
+      padding-right: 250px;
+      justify-content: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28px;
+      margin: auto;
+      color: white;
+      
+    }
+    .colour{
+      background-color: #45FFCA;
+    }
+    .pay{
+      margin-left: 40%;
+  }
+    .colour-2{
+      background-color: #F8F0E5;
+    }
+  .img {
+    margin-bottom: 20px; 
+  }
+  .col-lg-1 {
+    margin-right: 20px; 
+  }
+  @media (min-width: 992px) {
+    .col-lg-1 {
+        margin-right: 40px; 
+  }
+  .abc {
+    margin-top: 6cm;
+  }
+  
+  .footer-content {
+    display: flex;]
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333; 
+    color: whitesmoke;
+  }
+  
+  .about,
+  .follow-us,
+  .trending {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .trending ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .trending li {
+    margin-bottom: 5px;
+  }
+</style>
+<style>
+  
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+
+.Hamburger {
+    background-color: #333;
+}
+
+.ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.chatbot-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.conversation {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+#input-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#input-field {
+    flex-grow: 1;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+#submit-button {
+    background-color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.send-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+/* Style the footer */
+.abc {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about, .follow-us, .trending {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="Blog1.css">
+    <link rel="stylesheet" href="ch.js">
+    <link rel="stylesheet" href="chat1.css">
+</head>
+<body>
+    
+    <nav class="Hamburger">
+        <ul class="ul">
+            <li><a href="home 1.html">Home</a></li>
+            <li><a href="main.html">SwiftPay</a></li>
+            <li><a href="calcy.html">Calculator</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="chatbot.html">Servicebot</a></li>
+        </ul>
+    </nav>
+    <div class="chatbot-container">
+        <div class="header">
+            <h1 id="service">Chatbot</h1>
+        </div>
+        
+        <div class="chatbot">
+            <div class="conversation">
+            </div>
+            <form id="input-form">
+                <message-container>
+                    <input id="input-field" type="text" placeholder="Type your message...">
+                    <button id="submit-button" type="submit">
+                        <img class="send-icon" src="send-message.png" alt="">
+                    </button>
+                </message-container>
+            </form>
+        </div>
+    </div>
+    <script>
+        const inputField = document.getElementById("input-field");
+const conversation = document.querySelector(".conversation");
+
+inputField.addEventListener("keydown", function (event) {
+  if (event.code === "Enter") {
+    event.preventDefault();
+    sendMessage();
+  }
+});
+
+function sendMessage() {
+  const message = inputField.value;
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("chatbot-message");
+  const messageText = document.createElement("p");
+  messageText.classList.add("chatbot-text");
+
+  switch (message.toLowerCase()) {
+    case "hi":
+      messageText.textContent = "Hi!";
+      break;
+    case "how are you":
+      messageText.textContent = "I'm doing well, thank you for asking! what about you?";
+      break;
+    case "fine":
+    messageText.textContent = "That's good How can i assit you today?";
+    break;
+    case "what is your name":
+      messageText.textContent = "My name is Swiftpay!";
+      break;
+    case "what is the time":
+      const date = new Date();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      messageText.textContent = `It is currently ${hours}:${minutes}.`;
+      break;
+    case "what day is today":
+      const currentDate = new Date();
+      const dayOfWeek = currentDate.toLocaleDateString("en-US", {
+        weekday: "long"
+      });
+      const month = currentDate.toLocaleDateString("en-US", { month: "long" });
+      const dayOfMonth = currentDate.getDate();
+      const year = currentDate.getFullYear();
+      messageText.textContent = `Today is ${dayOfWeek}, ${month} ${dayOfMonth}, ${year}.`;
+      break;
+    
+    case " If The payment cancelled ":
+      messageText.textContent = "The payment will transfer within three days if problem call to the respective bank's customer sevice ";
+      break;
+    case "payment failed":
+      messageText.textContent = "Please call this number: 1800-419-0157.";
+      break;
+    case "the call is failed":
+      messageText.textContent =
+        "Please call the respective bank customer care.";
+      break;
+    case "sbi":
+      messageText.textContent =
+        "Please call this number: 1800 1234 (OR) 1800 2100.";
+      break;
+    case "hdfc":
+      messageText.textContent =
+        "Please call this number: 1800 202 6161 (OR) 1860 267 6161.";
+      break;
+    case "icici":
+      messageText.textContent = "Please call this number: 1860 120 7777.";
+      break;
+    case "axis":
+      messageText.textContent =
+        "Please call this number: 1860 419 5555 (OR) 1860 500 5555.";
+      break;
+    case "bank of india":
+      messageText.textContent =
+        "Please call this number: 1800 220 229 (OR) 1800 103 1906.";
+      break;
+    case "sbi":
+      messageText.textContent =
+        "Please call this number: 1800 11 1109 (OR) 94491 12211.";
+      break;
+    case "union bank of india":
+      messageText.textContent = "Please call this number: 1800 22 2244.";
+      break;
+    case "kvb":
+      messageText.textContent = "Please call this number: 1860 258 1916.";
+      break;
+    case "dbs":
+      messageText.textContent = "Please call this number: 1800 209 4555.";
+      break;
+    case "canara bank":
+      messageText.textContent = "Please call this number: 1800 1030.";
+      break;
+    case "ios":
+      messageText.textContent = "Please call this number: 1800 425 4445.";
+      break;
+    case "yes bank":
+      messageText.textContent = "Please call this number: 1800 1200.";
+      break;
+     case "problem during payment":
+      messageText.textContent = "What is the problem?";
+      break;
+     
+    default:
+      messageText.textContent = "I'm sorry, I don't understand.";
+  }
+
+  messageDiv.appendChild(messageText);
+  conversation.appendChild(messageDiv);
+  inputField.value = "";
+}
+
+    </script>
+   
+    <footer class="abc">
+        <div class="footer-content">
+            <div class="about">
+                <h2>About Us</h2>
+                <p>A user-friendly platform used to transfer your money with no limitations. </p>
+            </div>
+            <div class="follow-us">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61550850175252"><img src="F.jpg" alt="Facebook"></a>
+                    <a href="#"><img src="l.jpg" alt="LinkedIn"></a>
+                    <a href="https://instagram.com/coding._panda?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><img src="i.jpg" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="trending">
+                <h2>Trending Locations</h2>
+                <ul>
+                    <li><a href="https://www.google.com/search?client=ms-android-vivo-rev1&sca_esv=563320360&hl=en-US&cs=1&sxsrf=AB5stBjqzCAU-wKqEBo9rYpeLsWouJ9a0g:1694068807523&q=Chennai&ludocid=7953822084350858291&ibp=gwp;0,7&lsig=AB86z5X-RGXawSoPbKq6RWkNIili&kgs=b75511950312bace&shndl=-1&shem=lbse,lsp&source=sh/x/kp/local/m1/4">Chennai</a></li>
+                    <li><a href="https://www.google.com/search?client=ms-android-vivo-rev1&sca_esv=563320360&hl=en-US&cs=1&sxsrf=AB5stBhUzKVl3CN1EBPd9PeVPeDCnkABwg:1694068878539&q=Mumbai&ludocid=6747779342516128873&ibp=gwp;0,7&lsig=AB86z5VgKjZ9xGgF7kFq4J7SmRcV&kgs=d65c17006cf71871&shndl=-1&shem=lbse,lsp&source=sh/x/kp/local/m1/4">Mumbai</a></li>
+                    <li><a href="https://www.google.com/search?client=ms-android-vivo-rev1&sca_esv=563320360&hl=en-US&cs=1&sxsrf=AB5stBgAH30gP2PvotFmo6aKyM0s5Z3tSw:1694068949075&q=Delhi&ludocid=248267213351982656&ibp=gwp;0,7&lsig=AB86z5Ul6WYi3XqvhGI1rhQN1IMY&kgs=24f7ddd27652f658&shndl=-1&shem=lbse,lsp&source=sh/x/kp/local/m1/4">Delhi</a
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

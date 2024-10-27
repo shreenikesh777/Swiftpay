@@ -1,0 +1,203 @@
+<style>
+    .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+#notificationContainer2 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 999; 
+}
+#notification2 {
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+#closeNotification2 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+#notification2 h2 {
+    font-size: 18px;
+    margin: 0;
+}
+#notification2 p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+
+
+</style>
+<style>
+    
+    body, ul {
+        margin: 0;
+        padding: 0;
+      }
+      
+      
+      .Hamburger {
+        background-color: #333; 
+        color: whitesmoke; 
+        padding: 10px;
+      }
+      
+      
+      .ul {
+        list-style-type: none; 
+        display: flex;
+        justify-content: center; 
+      }
+      
+      .ul li {
+        margin: 0 15px; 
+      }
+      
+      .ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      
+      .ul li a:hover {
+        text-decoration: underline; 
+      }
+      .colour-1{
+        background-color: darkmagenta;
+        width: auto;
+        height: 350px;
+        padding-left: 250px;
+        padding-right: 250px;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 28px;
+        margin: auto;
+        color: white;
+        
+      }
+      .colour{
+        background-color: #45FFCA;
+      }
+      .pay{
+        margin-left: 40%;
+    }
+      .colour-2{
+        background-color: #F8F0E5;
+      }
+    .img {
+      margin-bottom: 20px; 
+    }
+    .col-lg-1 {
+      margin-right: 20px; 
+    }
+    @media (min-width: 992px) {
+      .col-lg-1 {
+          margin-right: 40px; 
+    }
+    .abc {
+      margin-top: 6cm;
+    }
+    
+    .footer-content {
+      display: flex;]
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #333; 
+      color: whitesmoke;
+    }
+    
+    .about,
+    .follow-us,
+    .trending {
+      flex: 1;
+      padding: 10px;
+    }
+    
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    
+    .trending ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .trending li {
+      margin-bottom: 5px;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Notifications</title>
+    <link rel="stylesheet" href="note.css">
+    <link rel="stylesheet" href="blog1.css">
+
+</head>
+<body>
+    <button id="showNotification"> Notification</button>
+
+    <div id="notificationContainer" class="hidden">
+        <div id="notification" class="notification">
+            <span class="close" id="closeNotification">&times;</span>
+            <h2>Swiftpay</h2>
+            <p>The amount has been added to the Piggybank </p>
+        </div>
+
+    <div id="notificationContainer1" class="hidden">
+        <div id="notification1" class="notification">
+            <span class="close" id="closeNotification1">&times;</span>
+            <h2>Swiftpay</h2>
+            <p>The amount has been added to the Piggybank </p>
+        </div>
+    </div>
+
+    <script >
+        
+document.getElementById('showNotification').addEventListener('click', function () {
+    const notificationContainer = document.getElementById('notificationContainer');
+    const notification = document.getElementById('notification');
+    notificationContainer.classList.remove('hidden');
+    document.getElementById('closeNotification').addEventListener('click', function () {
+        notificationContainer.classList.add('hidden');
+    });
+    setTimeout(function () {
+        notificationContainer.classList.add('hidden');
+    }, 5000); 
+});
+</script>
+</body>
+</html>

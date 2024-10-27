@@ -1,0 +1,211 @@
+<style>
+    .c{
+  font-size: xx-large;
+  color: greenyellow;
+  margin-left: 675px;
+  text-decoration: underline;
+}
+button{
+    width: 40px;
+    color: white;
+    background-color: grey;
+    }
+    .Hamburger {
+        background-color: navy; 
+        color: white; 
+        padding: 10px;
+      }
+      .ul {
+        list-style-type: none; 
+        display: flex;
+        justify-content: center; 
+      }
+      .ul li {
+        margin: 0 15px; 
+      }
+      .ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      
+      .ul li a:hover {
+        text-decoration: underline; 
+      }
+      .calculator {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .display {
+        margin-bottom: 10px;
+      }
+       input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 24px;
+        text-align: right;
+        border: none;
+        background-color: #f7f7f7;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        transition: background-color 0.2s;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #ccc;
+      }
+      .number {
+        background-color: #fff;
+        color: #333;
+      }
+      .operator {
+        background-color: #f2a53b;
+        color: #fff;
+      }
+      .operator:hover {
+        background-color: #e19630;
+      }
+      .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      color: whitesmoke;
+      margin-bottom:auto
+    }
+    .about,
+    .follow-us,
+    .trending {
+      flex: 1;
+      padding: 10px;
+    }
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .trending ul {
+      list-style: none;
+      padding: 0;
+    }
+    .trending li {
+      margin-bottom: 5px;
+    }
+    
+    
+
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculator</title>
+<link rel="stylesheet" href="calculator.css">
+
+</head>
+<body>
+    <nav class="Hamburger">
+        <ul class="ul">
+            <li><a href="home 1.html">Home</a></li>
+                    <li><a href="main.html">SwiftPay</a></li>
+                    <li><a href="calcy.html">Calculator</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="chatbot.html">Servicebot</a></li>
+        </ul>
+        <p><h1 class="c">Calculator</h1></p>
+        
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="result" disabled>
+            </div>
+            <div class="buttons">
+                <button class="number" onclick="appendToResult('1')">1</button>
+                <button class="number" onclick="appendToResult('2')">2</button>
+                <button class="number" onclick="appendToResult('3')">3</button>
+                <button class="operator" onclick="appendToResult('+')">+</button>
+                <button class="number" onclick="appendToResult('4')">4</button>
+                <button class="number" onclick="appendToResult('5')">5</button>
+                <button class="number" onclick="appendToResult('6')">6</button>
+                <button class="operator" onclick="appendToResult('-')">-</button>
+                <button class="number" onclick="appendToResult('7')">7</button>
+                <button class="number" onclick="appendToResult('8')">8</button>
+                <button class="number" onclick="appendToResult('9')">9</button>
+                <button class="operator" onclick="appendToResult('*')">*</button>
+                <button class="number" onclick="appendToResult('0')">0</button>
+                <button class="operator" onclick="appendToResult('%')">%</button>
+                <button class="operator" onclick="clearResult()">C</button>
+                <button class="operator" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    
+        <script>
+            let calculation = '';
+    
+            function appendToResult(value) {
+                calculation += value;
+                updateResultDisplay();
+            }
+    
+            function calculateResult() {
+                try {
+                    const result = eval(calculation);
+                    calculation = result.toString();
+                    updateResultDisplay();
+                } catch (error) {
+                    calculation = 'Error';
+                    updateResultDisplay();
+                }
+            }
+    
+            function clearResult() {
+                calculation = '';
+                updateResultDisplay();
+            }
+    
+            function updateResultDisplay() {
+                document.getElementById('result').value = calculation;
+            }
+        </script>
+
+  </div>
+  <script>
+   let calculation = ''
+  </script> 
+  <footer class="abc">
+    <div class="footer-content">
+        <div class="about">
+            <h2>About Us</h2>
+            <p>A user-friendly platform used to transfer your money with no limitations. </p>
+        </div>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61550850175252"><img src="F.jpg" alt="Facebook"></a>
+                <a href="#"><img src="l.jpg" alt="LinkedIn"></a>
+                <a href="https://instagram.com/coding._panda?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><img src="i.jpg" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="trending">
+            <h2>Trending Locations</h2>
+            <ul>
+                <li><a href="#">Chennai</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Delhi</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

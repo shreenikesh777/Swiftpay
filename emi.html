@@ -1,0 +1,312 @@
+<style>
+    <style>
+    
+    body, ul {
+        margin: 0;
+        padding: 0;
+      }
+      
+      
+      .Hamburger {
+        background-color: #333; 
+        color: whitesmoke; 
+        padding: 10px;
+      }
+      
+      
+      .ul {
+        list-style-type: none; 
+        display: flex;
+        justify-content: center; 
+      }
+      
+      .ul li {
+        margin: 0 15px; 
+      }
+      
+      .ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      
+      .ul li a:hover {
+        text-decoration: underline; 
+      }
+      .colour-1{
+        background-color: darkmagenta;
+        width: auto;
+        height: 350px;
+        padding-left: 250px;
+        padding-right: 250px;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 28px;
+        margin: auto;
+        color: white;
+        
+      }
+      .colour{
+        background-color: #45FFCA;
+      }
+      .pay{
+        margin-left: 40%;
+    }
+      .colour-2{
+        background-color: #F8F0E5;
+      }
+    .img {
+      margin-bottom: 20px; 
+    }
+    .col-lg-1 {
+      margin-right: 20px; 
+    }
+    @media (min-width: 992px) {
+      .col-lg-1 {
+          margin-right: 40px; 
+    }
+    .abc {
+      margin-top: 6cm;
+    }
+    
+    .footer-content {
+      display: flex;]
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #333; 
+      color: whitesmoke;
+    }
+    
+    .about,
+    .follow-us,
+    .trending {
+      flex: 1;
+      padding: 10px;
+    }
+    
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    
+    .trending ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .trending li {
+      margin-bottom: 5px;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Blog1.css">
+
+    <header>
+        <style>
+            #border {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #emi-calculation {
+                width: 500px;
+                height: 300px;
+                border: 2px solid steelblue;
+                box-shadow: 2px 5px 5px gray;
+                border-radius: 5px;
+                background-color: #CAFAFE;
+            }
+
+            #title {
+                font-size: 30px;
+                font-family: verdana;
+                color: steelblue;
+                text-align: center;
+                text-decoration: underline;
+            }
+
+            #emi-output {
+                width: 500px;
+                height: 300px;
+                border: 2px solid steelblue;
+                box-shadow: 2px 5px 5px gray;
+                border-radius: 5px;
+                margin-top: 10px;
+                background-color: #CAFAFE;
+            }
+
+            .section {
+                margin-left: 10px;
+                font-size: 20px;
+                padding: 10px;
+                font-family: verdana;
+            }
+
+            .result {
+                margin-top: 20px;
+                margin-left: 10px;
+                font-size: 20px;
+                padding: 5px;
+                font-family: verdana;
+            }
+
+            .input {
+                float: right;
+                height: 20px;
+                margin-right: 10px;
+            }
+
+            #calc,
+            #reset {
+                width: 200px;
+                height: 30px;
+                font-size: 20px;
+                background-color: steelblue;
+                box-shadow: 2px 5px 5px gray;
+            }
+
+            .submit {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            #reset {
+                background-color: orange;
+            }
+
+            @media screen and (max-width: 500px) {
+                #border {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                .label,
+                .result {
+                    font-size: 10px;
+                }
+
+                #title {
+                    font-size: 20px;
+                }
+
+                #emi-calculation {
+                    max-width: 100%;
+                }
+
+                #emi-output {
+                    width: 100%;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                .section {
+                    font-size: 16px;
+                }
+
+                .input {
+                    width: 100px;
+                }
+
+                #calc,
+                #reset {
+                    width: 100px;
+                }
+
+            }
+        </style>
+
+        <body>
+            <nav class="Hamburger">
+                <a href="notfy.html"><button id="showNotification"> Notification</button></a>
+                <ul class="ul">
+                    <li><a href="home 1.html">Home</a></li>
+                    <li><a href="main.html">SwiftPay</a></li>
+                    <li><a href="calcy.html">Calculator</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                </ul>
+            </nav>
+            <div id="border">
+
+                <div id="emi-calculation">
+
+                    <p id="title"><strong>EMI Calculator<strong></p>
+
+                    <div class="section">
+                        <label id="loanamount" class="label">Loan Amount:(INR)</label>
+                        <input type="number" class="input" id="value1" placeholder="Enter Loan amount.."></input>
+                    </div>
+                    <div class="section">
+                        <label id="interestrate" class="label">Interest Rate:(%)</label>
+                        <input type="number" class="input" id="value2" placeholder="Enter IR per year.."></input>
+                    </div>
+                    <div class="section">
+                        <label id="loanduration" class="label">Loan Duration(Months):</label>
+                        <input type="number" class="input" id="value3" placeholder="Enter loan duration.."></input>
+                    </div>
+
+
+                    <div class="submit"> -->
+                        <button type="submit" id="calc" onclick="calculation()">Calculate</button>
+                    </div>
+                </div>
+
+                <div id="emi-output">
+                    <div class="result">Monthly Interest: <span id="monthly-interest"></span>
+                    </div>
+                    <div class="result">Monthly Payment: <span id="monthly-payment"></span>
+                    </div>
+                    <div class="result">Total Repayment: <span id="total-repayment"></span>
+                    </div>
+                    <div class="result">Total Interest Cost: <span id="total-interest"></span>
+                    </div>
+
+                    <div class="submit">
+                        <button type="submit" id="reset" onclick="reset()">Reset</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <script>
+                function reset() {
+                    document.getElementById("value1").value = '';
+                    document.getElementById("value2").value = '';
+                    document.getElementById("value3").value = '';
+
+                    document.getElementById("monthly-interest").innerHTML = "INR 0.00";
+                    document.getElementById("monthly-payment").innerHTML = "INR 0.00";
+                    document.getElementById("total-repayment").innerHTML = "INR 0.00";
+                    document.getElementById("total-interest").innerHTML = "INR 0.00";
+                }
+
+                function calculation() {
+                    var loanAmount = parseFloat(document.getElementById("value1").value) || 0;
+                    var interestRate = parseFloat(document.getElementById("value2").value) || 0;
+                    var loanDuration = parseInt(document.getElementById("value3").value) || 0;
+
+                    var monthlyInterestRate = (interestRate / 100) / 12;
+                    var monthlyPayment = loanAmount * (monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -loanDuration)));
+                    var totalRepayment = monthlyPayment * loanDuration;
+                    var totalInterestCost = totalRepayment - loanAmount;
+
+                    document.getElementById("monthly-interest").innerHTML = "INR " + (monthlyInterestRate * loanAmount).toFixed(2);
+                    document.getElementById("monthly-payment").innerHTML = "INR " + monthlyPayment.toFixed(2);
+                    document.getElementById("total-repayment").innerHTML = "INR " + totalRepayment.toFixed(2);
+                    document.getElementById("total-interest").innerHTML = "INR " + totalInterestCost.toFixed(2);
+                }
+
+            </script>
+        </body>
+
+</html>
